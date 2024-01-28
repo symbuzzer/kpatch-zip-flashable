@@ -82,7 +82,7 @@ fi
 ui_print "Your superkey is: $SUPERKEY"
 
 ui_print "Patching kernel"
-./kptools-android -p "$TMP/kernel.ori" --skey "$SUPERKEY" --kpimg "$TMP/kpimg-android" --out "$TMP/kernel"
+./kptools-android -p -i "$TMP/kernel.ori" --skey "$SUPERKEY" --kpimg "$TMP/kpimg-android" --out "$TMP/kernel"
 
 if [ -f "$TMP/kernel" ]; then
     ui_print "patch kernel success"
