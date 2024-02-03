@@ -17,7 +17,6 @@ unzip -o "$ZIPFILE" "magiskboot" -d "$TMP";
 unzip -o "$ZIPFILE" "libapjni.so" -d "$TMP";
 unzip -o "$ZIPFILE" "kpimg-android" -d "$TMP";
 unzip -o "$ZIPFILE" "kptools-android" -d "$TMP";
-unzip -o "$ZIPFILE" "superkey-here.txt" -d "$TMP";
 
 cd "$TMP"
 
@@ -72,11 +71,11 @@ ui_print "unpacking.."
 
 mv "$TMP/kernel" "$TMP/kernel.ori"
 
-SUPERKEY="$(cat "$TMP/superkey-here.txt")"
+SUPERKEY="$(cat "/sdcard/superkey.txt")"
 
 if [ -z "$SUPERKEY" ]; then
-  ui_print "Superkey must not be empty."
-  exit 1
+  ui_print "Superkey not found in sdcard. Using device serial as superkey"
+  SUPERKEY="$($GETPROP "ro.serialno")"
 fi
 
 ui_print "Your superkey is: $SUPERKEY"
