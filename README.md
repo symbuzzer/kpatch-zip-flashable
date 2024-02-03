@@ -1,8 +1,11 @@
 # kpatch-zip-flashable
-KernelPatch flashable zip in recovery
+KernelPatch recovery flashable zip
 
+## How to use
+Put your superkey in the root of your sdcard as "superkey.txt" and just flash latest zip file from recovery.
 
-PUT YOUR SUPERKEY IN FILE "superkey-here.txt" AND JUST FLASH IN RECOVERY
+If superkey.txt not found in sdcard, it uses your device serial number as superkey. You can find it generally in Settings>About>Model option.
 
-KernelPatch: https://github.com/bmax121/KernelPatch
-APatch: https://github.com/bmax121/APatch
+## Credits
+- [bmax121/KernelPatch](https://github.com/bmax121/KernelPatch)
+- [bmax121/APatch](https://github.com/bmax121/APatch)
